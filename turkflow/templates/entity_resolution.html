@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block question_content %}
+<div class='crower_resolution' >
+    <h1>Are any pair in this list identical?</h1>
+    <p>Below is a table of pairs. For every row in the table, item A and item B are either exactly the same thing but phrased differently, or two different things. Please choose for each pair.</p>
+    <table class='table'>
+        <tr>
+            <th>Item A</th>
+            <th>Item B</th>
+            <th>Answer</th>
+        </tr>
+        {% for a,b in pairs %}
+            <tr>
+                <td>A: {{ a }}</td>
+                <td>B: {{ b }}</td>
+                <td>
+                    <input type="radio" name="{{ a }}_{{ b }}" value="same">Item A and Item B are exactly the same, but phrased differently</input>
+                    <input type="radio" name="{{ a }}_{{ b }}" value="different">Item A and Item B are at least slightly different</input>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
