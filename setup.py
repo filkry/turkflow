@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='turkflow',
-    version='0.1',
+    version='0.1.01',
     author='Fil Krynicki',
     author_email='filipkrynicki@gmail.com',
     packages=['turkflow'],
@@ -15,5 +15,6 @@ setup(
                 "python-Levenshtein == 0.10.2",
                 "boto >= 2.8.0",
                 "Jinja2 >= 2.6",
+                "numpy >= 1.7.1"
             ],
 )
