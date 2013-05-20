@@ -21,7 +21,7 @@ from turkflow.turkflow import *
 from jinja2 import *
 
 # create jinja2 environment using "templates" subdirectory
-env = Environment(loader=PackageLoader('common', 'templates'))
+env = Environment(loader=PackageLoader('turkflow', 'templates'))
 
 class TestHIT(TurkHITType):
     def __init__(self):
@@ -29,13 +29,25 @@ class TestHIT(TurkHITType):
             "This is a test HIT",
             string.split('keywords'),
             description = 'test description',
-            duration = 10, # minutes
+            duration = 600, # seconds
             max_assignments = 50,
             annotation = 'test', # by default, this will make turkflow look for a "test.html" jinja2 template
             reward = 0.05,
             env = env)
 
-tc = TurkConnection("ID", "~/place_to_put_db")
-hit_key = tc.createHIT(TestHit())
-results, completion_times = tc.waitForHIT(key, timeout=30) # stop polling after 30 seconds
+tc = TurkConnection("turkflow_test_id", "~/scratch")
+hit_key = tc.createHIT(TestHIT())
+results, completion_times = tc.waitForHIT(hit_key, timeout=30) # stop polling after 30 seconds
+```
+
+In a 'templates' subdirectory, we include ``base.html`` included in the turkflow repository and our own html file, ``test.html``:
+
+```html
+{% extends "base.html" %}
+
+{% block question_content %}
+    <p id="name_q">What is your name?</p>
+    <!-- turk questions are identified by "name" so that you can gather multiple responses to the same question -->
+    <input type="text" name="name_q" placeholder="Clara">
+{% endblock %}
 ```

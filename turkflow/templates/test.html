@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block question_content %}
+	<p id="name_q">What is your name?</p>
+	<!-- turk questions are identified by "name" so that you can gather multiple responses to the same question -->
+	<input type="text" name="name_q" placeholder="Clara">
+{% endblock %}
