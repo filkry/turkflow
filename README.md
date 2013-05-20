@@ -39,3 +39,8 @@ tc = TurkConnection("ID", "~/place_to_put_db")
 hit_key = tc.createHIT(TestHit())
 results, completion_times = tc.waitForHIT(key, timeout=30) # stop polling after 30 seconds
 ```
+
+In a 'templates' subdirectory, we include ``base.html`` included in the turkflow repository and our own html file, ``test.html``:
+
+```html
+```
