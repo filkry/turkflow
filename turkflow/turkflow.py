@@ -202,7 +202,7 @@ class TurkConnection:
                 quals = Qualifications()
                 quals.add(lr)
                 if not self.us_only:
-                    quals = None # remove once I figure our how to make Americans love me
+                    quals = None
 
                 # Some aspects changed for sandbox mode to make testing easier
                 rs = self.connection.create_hit(

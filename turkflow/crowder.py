@@ -42,7 +42,7 @@ class EntityResolutionHit(TurkHITType):
                 keywords=string.split("entity resolution english"),
                 duration = 600,
                 max_assignments = 1,
-                annotation = 'entity_resolution',
+                annotation = 'crowdER_template',
                 reward = 0.15,
                 env = env)
 
