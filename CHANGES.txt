@@ -1,1 +1,2 @@
+v0.2.1, June 6, 2013 -- Removed undocumented testmode behaviour
 v0.1, May 14, 2013 -- Initial release.

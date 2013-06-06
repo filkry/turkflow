@@ -210,11 +210,11 @@ class TurkConnection:
                     title = tht.title,
                     description = tht.description,
                     duration = tht.duration,
-                    max_assignments = tht.max_assignments if not self.testmode else 1,
+                    max_assignments = tht.max_assignments,
                     annotation = tht.annotation,
                     reward = tht.reward,
                     qualifications = quals,
-                    lifetime = tht.lifetime if not self.testmode else datetime.timedelta(minutes=10),
+                    lifetime = tht.lifetime,
                     approval_delay = tht.approval_delay)
 
                 for hit in rs:
