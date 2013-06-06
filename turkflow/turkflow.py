@@ -230,7 +230,7 @@ class TurkConnection:
                     job.reset_counter = reset_counter
 
                     job.hitid = hit.HITId
-                    job.nassignments = tht.max_assignments if not self.testmode else 1
+                    job.nassignments = tht.max_assignments
                     self.job_db.addJob(job)
 
             else: # Check if job is done
