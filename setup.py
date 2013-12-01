@@ -15,6 +15,7 @@ setup(
                 "python-Levenshtein == 0.10.2",
                 "boto >= 2.8.0",
                 "Jinja2 >= 2.6",
-                "numpy >= 1.7.1"
+                "numpy >= 1.7.1",
+                "gdbm >= 2.7.4"
             ],
 )
